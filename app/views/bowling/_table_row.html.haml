@@ -1,0 +1,12 @@
+%tr{:id => "match#{match}top"}
+  %td.heading{:id => "match#{match}title"}= "Game #{match}"
+  - 1.upto 10 do |i|
+    %td.field_empty{:id => "match#{match}_frame#{i}_field3"} &nbsp;
+    %td.field_ball{:id => "match#{match}_frame#{i}_field1"} &nbsp;
+    %td.field_ball{:id => "match#{match}_frame#{i}_field2"} &nbsp;
+  %td.match_summary_top
+%tr{:id => "match#{match}bottom"}
+  %td.heading &nbsp;
+  - 1.upto 10 do |i|
+    %td.field_total{:colspan => 3, :id => "match#{match}_frame#{i}_field4"} &nbsp;
+  %td.match_summary_bottom{:id => "match#{match}_summary"} &nbsp;

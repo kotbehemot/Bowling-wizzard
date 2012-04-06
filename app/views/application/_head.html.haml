@@ -1,0 +1,10 @@
+%head
+  %title Bowling Wizzard
+  = stylesheet_link_tag    "main"
+  = javascript_include_tag "application"
+  = yield :head
+  = csrf_meta_tags
+  / Favicons
+  = favicon_link_tag( "/favicon.ico", :rel => "shortcut icon", :type => "image/ico")
+  = favicon_link_tag( "/favicon.ico", :rel => "icon", :type => "image/ico")
+

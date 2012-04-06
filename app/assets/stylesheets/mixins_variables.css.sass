@@ -1,0 +1,49 @@
+// ------------------------ VARIABLES & MIXINS ------------------------ //
+
+//********************************
+// variables
+//********************************
+
+
+$heading_table_color: #ccc
+$normal_table_color: #fff
+$red: #900
+
+
+//********************************
+// dimensions
+//********************************
+
+$border_radius: 6px
+
+//********************************
+// Mixims
+//********************************
+
+=gradient_backgroung($color, $variation)
+  background-color: $color
+  /* gecko based browsers */
+  background: -moz-linear-gradient(top, ($color + $variation), ($color - $variation))
+  /* webkit based browsers */
+  background: -webkit-gradient(linear, left top, left bottom, from(($color + $variation)), to(($color - $variation)))
+
+=smallest_txt
+  font-size: 9px
+
+=small_txt
+  font-size: 11px
+
+=medium_txt
+  font-size: 13px
+  font-weight: bold
+
+=big_txt
+  font-size: 16px
+  font-weight: bold
+
+=huge_txt
+  font-size: 1.7em
+
+=dimensions($x, $y)
+  width: $x
+  height: $y
