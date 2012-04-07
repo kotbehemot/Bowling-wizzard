@@ -35,6 +35,8 @@ init = ->
   $( document ).keydown (event) ->
     if event.which > 48 and event.which < 58
       toggle_pin($("#pin"+(event.which-48)))
+    if event.which is 48
+      toggle_pin($("#pin10"))
 
   $( document ).shortkeys({
     'a': knock_down_all_pins,
