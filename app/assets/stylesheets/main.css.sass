@@ -44,6 +44,9 @@ body
   color: #000
   background-color: #fff
 
+.red
+  color: $red
+
 #wrapper
   width: 800px
   height: auto
@@ -85,7 +88,8 @@ body
     margin-bottom: 20px
     .status_box
       float: left
-      background-color: $heading_table_color
+      +gradient_backgroung($heading_table_color, #222)
+      border-radius: $border_radius
       padding: 8px
       margin: 5px
       +big_txt
@@ -94,7 +98,7 @@ body
     margin-bottom: 180px
     thead
       font-size: 16px
-      background-color: $heading_table_color
+      +gradient_backgroung($heading_table_color, #222)
       padding: 4px
     td
       height: 15px
