@@ -47,7 +47,7 @@ Bowling::Application.routes.draw do
   #   end
 
   scope :path => '/:room_id' do
-    resources :games, :except => [:show, :new]
+    resources :games, :except => [:show, :new, :destroy]
   end
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
