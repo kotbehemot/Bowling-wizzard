@@ -1,0 +1,17 @@
+defaults: &defaults
+  adapter:  postgresql
+  username: postgres
+  password: 
+  host:     localhost
+
+development:
+  <<: *defaults
+  database: bowling_dev
+
+test: &test
+  <<: *defaults
+  database: bowling_test
+
+production:
+  <<: *defaults
+  database: bowling_live

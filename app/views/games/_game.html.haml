@@ -1,0 +1,12 @@
+%tr{:id => "match#{game.number}top", :'data-game-id' => game.id, :'data-frame' => game.current_frame_number, :'data-ball' => game.current_ball}
+  %td.heading{:id => "match#{game.number}title"}= "Game #{game.number}"
+  - game.frames.map{|frame| FramesPresenter.new(frame, self)}.each do |frame|
+    %td.field_empty{:id => "match#{game.number}_frame#{frame.number}_field3"} &nbsp;
+    %td.field_ball{:id => "match#{game.number}_frame#{frame.number}_field1"}= frame.throw1
+    %td.field_ball{:id => "match#{game.number}_frame#{frame.number}_field2"}= frame.throw2
+  %td.match_summary_top
+%tr{:id => "match#{game.number}bottom", :'data-advance-frame' => game.advanced_frame, :'data-new-game' => game.game_ended}
+  %td.heading &nbsp;
+  - game.frames.map{|frame| FramesPresenter.new(frame, self)}.each do |frame|
+    %td.field_total{:colspan => 3, :id => "match#{game.number}_frame#{frame.number}_field4"}= frame.total
+  %td.match_summary_bottom{:id => "match#{game.number}_summary"}= game.total

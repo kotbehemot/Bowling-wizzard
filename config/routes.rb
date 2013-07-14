@@ -46,9 +46,12 @@ Bowling::Application.routes.draw do
   #     resources :products
   #   end
 
+  scope :path => '/:room_id' do
+    resources :games, :except => [:show, :new]
+  end
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'bowling#go'
+  root :to => 'games#index'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

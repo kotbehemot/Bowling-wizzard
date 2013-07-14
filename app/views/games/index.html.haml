@@ -1,0 +1,31 @@
+#current_status.clearfix
+  .status_box
+    Game:
+    %span#current_game= @games.last.number
+  .status_box
+    Frame:
+    %span#current_frame 1
+  .status_box
+    Ball:
+    %span#current_ball 1
+  .status_box
+    = link_to "New game", "#", :id => "new_game_link"
+  .status_box
+    = link_to "Clear games", root_path
+
+%table#scoreboard
+  %thead
+    %tr
+      %th.white &nbsp;
+      - 1.upto 10 do |i|
+        %th{:colspan => 3}= "#{i}"
+      %th.heading= "TOTAL"
+  %tbody
+    = render @games
+
+#pins
+  #bottom_arrow{:title => 'Click to knock down all the pins'}
+  - 1.upto 10 do |i|
+    .pin{:id => "pin#{i}", :title => "pin #{i}"}
+  #right_arrow{:title => 'Click to accept the score for this ball'}
+
